@@ -16,5 +16,5 @@ Tutor session
 
 [Deployed application here.](https://pm-912.github.io/calendar/)
 
-![screenshot](./Assets/images/calendar-screenshot.png)
+![screenshot](./Assets/images/screenshot.png)
 While this shows the page, it does not show the color changing capabilities.
