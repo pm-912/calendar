@@ -4,7 +4,7 @@ $(function () {
   $("#currentDay").text(currentDay.format('dddd, MMMM D YYYY'));
   
   //An array that represents each hour for the schedule
-  const curHour = [dayjs().hour(9).format("h A"), dayjs().hour(10).format("h A"), dayjs().hour(11).format("h A"), dayjs().hour(12).format("h A"), dayjs().hour(13).format("h A"), dayjs().hour(14).format("h A"), dayjs().hour(15).format("h A"), dayjs().hour(16).format("h A")];
+  const curHour = [dayjs().hour(9), dayjs().hour(10), dayjs().hour(11), dayjs().hour(12), dayjs().hour(13), dayjs().hour(14), dayjs().hour(15), dayjs().hour(16)];
   
   // This is the location on the HTML that the schedule will go.
   const hourCont = document.querySelector("#curHour");
@@ -13,8 +13,8 @@ $(function () {
   // and html for the shape of the divs using template literal. 
   for (i = 0; i < curHour.length; i++) {
     const hourDiv = 
-    `<div id=${curHour[i]} class="row time-block">
-      <div class="col-2 col-md-1 hour text-center py-3">${curHour[i]} </div>
+    `<div id=${curHour[i].format("H")} class="row time-block">
+      <div class="col-2 col-md-1 hour text-center py-3">${curHour[i].format("h A")} </div>
       <textarea class="col-8 col-md-10 description" rows="3"> </textarea>
       <button class="btn saveBtn col-2 col-md-1" aria-label="save">
         <i class="fas fa-save" aria-hidden="true"></i>
@@ -39,6 +39,7 @@ $(function () {
 
     })
   }
+  
   checkHour();
 
   // This event listener waits for the user to click the save (floppy disk) button
